@@ -11,28 +11,37 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "custom-announcement-bar": {
+      "type": "custom-announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
+        "message_3bjnUX": {
+          "type": "message",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "Free Shipping on orders over $50"
+          }
+        },
+        "message_gbAFBj": {
+          "type": "message",
+          "settings": {
+            "text": "New Arrivals Every Week"
+          }
+        },
+        "message_izVhrD": {
+          "type": "message",
+          "settings": {
+            "text": "Use code WELCOME10 for 10% off"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "message_3bjnUX",
+        "message_gbAFBj",
+        "message_izVhrD"
       ],
       "settings": {
+        "enable_slider": true,
         "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "change_slides_speed": 5
       }
     },
     "header": {
@@ -56,7 +65,7 @@
     }
   },
   "order": [
-    "announcement-bar",
+    "custom-announcement-bar",
     "header"
   ]
 }
