@@ -1,0 +1,140 @@
+{{ 'section-custom-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign message_blocks = section.blocks
+  assign use_slider = false
+  if section.settings.enable_slider and message_blocks.size > 1
+    assign use_slider = true
+  endif
+-%}
+
+{%- if message_blocks.size > 0 -%}
+  {%- if use_slider -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  {%- endif -%}
+
+  <div class="custom-announcement-bar color-background">
+    <div class="page-width custom-announcement-bar__inner">
+      {%- if use_slider -%}
+        <custom-announcement-bar
+          class="custom-announcement-bar__wrapper"
+          role="region"
+          aria-roledescription="{{ 'sections.announcements.carousel' | t }}"
+          aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
+          data-autoplay="{{ section.settings.auto_rotate }}"
+          data-speed="{{ section.settings.change_slides_speed | times: 1000 }}"
+        >
+          <button
+            type="button"
+            class="custom-announcement-bar__button custom-announcement-bar__button--prev"
+            aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
+            aria-controls="CustomAnnouncementBar-{{ section.id }}"
+          >
+            <span class="svg-wrapper custom-announcement-bar__icon custom-announcement-bar__icon--prev">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </button>
+
+          <div class="swiper custom-announcement-bar__slider" id="CustomAnnouncementBar-{{ section.id }}">
+            <div class="swiper-wrapper">
+              {%- for block in message_blocks -%}
+                <div
+                  class="swiper-slide custom-announcement-bar__slide"
+                  id="CustomAnnouncementBarSlide-{{ section.id }}-{{ forloop.index }}"
+                  {{ block.shopify_attributes }}
+                  role="group"
+                  aria-roledescription="{{ 'sections.announcements.announcement' | t }}"
+                  aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                >
+                  {%- if block.settings.text != blank -%}
+                    <p class="custom-announcement-bar__message">{{ block.settings.text | escape }}</p>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="custom-announcement-bar__button custom-announcement-bar__button--next"
+            aria-label="{{ 'sections.announcements.next_announcement' | t }}"
+            aria-controls="CustomAnnouncementBar-{{ section.id }}"
+          >
+            <span class="svg-wrapper custom-announcement-bar__icon custom-announcement-bar__icon--next">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </custom-announcement-bar>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer="defer"></script>
+        <script src="{{ 'section-custom-announcement-bar.js' | asset_url }}" defer="defer"></script>
+      {%- else -%}
+        {%- assign first_block = message_blocks.first -%}
+        {%- if first_block.settings.text != blank -%}
+          <p
+            class="custom-announcement-bar__message"
+            role="region"
+            aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
+            {{ first_block.shopify_attributes }}
+          >
+            {{- first_block.settings.text | escape -}}
+          </p>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.custom-announcement-bar.name",
+  "class": "custom-announcement-bar-section",
+  "max_blocks": 12,
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "t:sections.custom-announcement-bar.settings.enable_slider.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.custom-announcement-bar.settings.auto_rotate.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.custom-announcement-bar.settings.change_slides_speed.label",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "t:sections.custom-announcement-bar.blocks.message.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.custom-announcement-bar.blocks.message.settings.text.label",
+          "default": "t:sections.custom-announcement-bar.blocks.message.settings.text.default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-announcement-bar.presets.name"
+    }
+  ]
+}
+{% endschema %}
