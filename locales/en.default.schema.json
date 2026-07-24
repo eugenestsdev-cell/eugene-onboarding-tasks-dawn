@@ -519,6 +519,8 @@
       },
       "presets": {
         "name": "Custom featured products"
+      }
+    },
     "custom-announcement-bar": {
       "name": "Custom announcement bar",
       "settings": {
