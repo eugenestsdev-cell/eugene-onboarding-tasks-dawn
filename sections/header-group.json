@@ -13,7 +13,36 @@
   "sections": {
     "custom-announcement-bar": {
       "type": "custom-announcement-bar",
-      "settings": {}
+      "blocks": {
+        "message_3bjnUX": {
+          "type": "message",
+          "settings": {
+            "text": "Free Shipping on orders over $50"
+          }
+        },
+        "message_gbAFBj": {
+          "type": "message",
+          "settings": {
+            "text": "New Arrivals Every Week"
+          }
+        },
+        "message_izVhrD": {
+          "type": "message",
+          "settings": {
+            "text": "Use code WELCOME10 for 10% off"
+          }
+        }
+      },
+      "block_order": [
+        "message_3bjnUX",
+        "message_gbAFBj",
+        "message_izVhrD"
+      ],
+      "settings": {
+        "enable_slider": true,
+        "auto_rotate": false,
+        "change_slides_speed": 5
+      }
     },
     "header": {
       "type": "header",
