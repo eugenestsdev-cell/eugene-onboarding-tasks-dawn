@@ -1,0 +1,73 @@
+{{ 'section-custom-featured-products.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign collection = section.settings.collection
+  assign heading    = section.settings.heading
+-%}
+
+{%- if collection != blank -%}
+  <section class="custom-featured-products page-width">
+    {%- if heading != blank -%}
+      <h2 class="custom-featured-products__heading">{{ heading | escape }}</h2>
+    {%- endif -%}
+
+    <ul class="custom-featured-products__grid" role="list">
+      {%- for product in collection.products limit: 3 -%}
+        <li class="custom-featured-products__item">
+          <a class="custom-featured-products__link" href="{{ product.url }}">
+            {%- if product.featured_image -%}
+              <div class="custom-featured-products__image-wrapper">
+                <img
+                  class="custom-featured-products__image"
+                  srcset="
+                    {%- if product.featured_image.width >= 165 -%}{{ product.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if product.featured_image.width >= 360 -%}{{ product.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
+                    {{ product.featured_image | image_url }} {{ product.featured_image.width }}w
+                  "
+                  src="{{ product.featured_image | image_url: width: 535 }}"
+                  sizes="(min-width: 750px) calc(33vw - 2rem), calc(100vw - 3rem)"
+                  alt="{{ product.featured_image.alt | escape }}"
+                  width="{{ product.featured_image.width }}"
+                  height="{{ product.featured_image.height }}"
+                  loading="lazy"
+                >
+              </div>
+            {%- endif -%}
+
+            <div class="custom-featured-products__info">
+              <h3 class="custom-featured-products__title">{{ product.title | escape }}</h3>
+              <p class="custom-featured-products__price">{{ product.price | money }}</p>
+            </div>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.custom-featured-products.name",
+  "tag": "section",
+  "class": "custom-featured-products-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.custom-featured-products.settings.heading.label",
+      "default": "t:sections.custom-featured-products.settings.heading.default"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.custom-featured-products.settings.collection.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-featured-products.presets.name"
+    }
+  ]
+}
+{% endschema %}
