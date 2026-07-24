@@ -1,0 +1,64 @@
+{{ 'section-custom-scroll-popup.css' | asset_url | stylesheet_tag }}
+
+<scroll-popup
+  class="scroll-popup"
+  aria-live="polite"
+  aria-atomic="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="{{ section.settings.heading | escape }}"
+  hidden
+>
+  <div class="scroll-popup__inner">
+    {%- if section.settings.heading != blank -%}
+      <p class="scroll-popup__heading h4">{{ section.settings.heading | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.text != blank -%}
+      <div class="scroll-popup__text rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+
+    <button
+      type="button"
+      class="scroll-popup__close button button--secondary"
+      aria-label="{{ section.settings.close_label | escape }}"
+    >
+      {{- section.settings.close_label | escape -}}
+    </button>
+  </div>
+</scroll-popup>
+
+<script src="{{ 'section-custom-scroll-popup.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Scroll popup",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Don't miss out!"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Sign up to receive exclusive offers and updates.</p>"
+    },
+    {
+      "type": "text",
+      "id": "close_label",
+      "label": "Close button label",
+      "default": "Close"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Scroll popup"
+    }
+  ]
+}
+{% endschema %}
