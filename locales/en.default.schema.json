@@ -506,6 +506,21 @@
         "name": "Announcement bar"
       }
     },
+    "custom-featured-products": {
+      "name": "Custom featured products",
+      "settings": {
+        "heading": {
+          "label": "Heading",
+          "default": "Featured Products"
+        },
+        "collection": {
+          "label": "Collection"
+        }
+      },
+      "presets": {
+        "name": "Custom featured products"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {
