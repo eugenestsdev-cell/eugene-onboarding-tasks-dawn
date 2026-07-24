@@ -50,6 +50,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "all",
         "products_to_show": 8,
@@ -80,7 +81,7 @@
       "type": "custom-featured-products",
       "name": "t:sections.custom-featured-products.presets.name",
       "settings": {
-        "heading": "Featured Products",
+        "heading": "Custom Featured Products",
         "collection": "hydrogen"
       }
     }
