@@ -506,6 +506,34 @@
         "name": "Announcement bar"
       }
     },
+    "custom-announcement-bar": {
+      "name": "Custom announcement bar",
+      "settings": {
+        "enable_slider": {
+          "label": "Enable slider"
+        },
+        "auto_rotate": {
+          "label": "Auto-rotate slides"
+        },
+        "change_slides_speed": {
+          "label": "Change slides every"
+        }
+      },
+      "blocks": {
+        "message": {
+          "name": "Message",
+          "settings": {
+            "text": {
+              "label": "Text",
+              "default": "Free Shipping on orders over $50"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Custom announcement bar"
+      }
+    },
     "apps": {
       "name": "Apps",
       "settings": {
