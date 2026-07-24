@@ -8,7 +8,6 @@
   text-align: center;
 }
 
-/* Grid — flex-based, following Dawn's .grid pattern */
 .custom-featured-products__grid {
   display: flex;
   flex-wrap: wrap;
