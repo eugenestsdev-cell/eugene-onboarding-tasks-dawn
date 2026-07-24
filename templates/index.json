@@ -48,6 +48,14 @@
         "show_text_below": false
       }
     },
+    "scroll_popup": {
+      "type": "custom-scroll-popup",
+      "settings": {
+        "heading": "Don't miss out!",
+        "text": "<p>Sign up to receive exclusive offers and updates.</p>",
+        "close_label": "Close"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -79,6 +87,7 @@
   },
   "order": [
     "image_banner",
+    "scroll_popup",
     "featured_collection"
   ]
 }
