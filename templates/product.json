@@ -49,6 +49,24 @@
           "type": "description",
           "settings": {}
         },
+        "collapsible_tab_zFPkDB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Material",
+            "icon": "check_mark",
+            "content": "<p>{{ product.metafields.custom.material.value }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_qyEMcW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping info",
+            "icon": "check_mark",
+            "content": "{{ product.metafields.custom.shipping_info | metafield_tag }}",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -64,6 +82,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "collapsible_tab_zFPkDB",
+        "collapsible_tab_qyEMcW",
         "share"
       ],
       "settings": {
@@ -82,15 +102,9 @@
         "padding_bottom": 12
       }
     },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -106,11 +120,19 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "custom_featured_products_H4UMfD": {
+      "type": "custom-featured-products",
+      "name": "t:sections.custom-featured-products.presets.name",
+      "settings": {
+        "heading": "Featured Products",
+        "collection": "hydrogen"
+      }
     }
   },
   "order": [
     "main",
-    "disclosures",
-    "related-products"
+    "related-products",
+    "custom_featured_products_H4UMfD"
   ]
 }
