@@ -49,6 +49,24 @@
           "type": "description",
           "settings": {}
         },
+        "collapsible_tab_ehVTwt": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping info",
+            "icon": "check_mark",
+            "content": "{{ product.metafields.custom.shipping_info | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_crMT97": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Material",
+            "icon": "check_mark",
+            "content": "<p>{{ product.metafields.custom.material.value }}</p>",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -64,6 +82,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "collapsible_tab_ehVTwt",
+        "collapsible_tab_crMT97",
         "share"
       ],
       "settings": {
@@ -85,6 +105,10 @@
     "disclosures": {
       "type": "disclosures",
       "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
       }
