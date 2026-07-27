@@ -150,18 +150,69 @@
             "imageRatio": "1",
             "reviewerNameColor": "#ffffff",
             "starsColor": "#ffffff",
-            "arrows_backgroundColor": "#FFFFFF",
-            "arrows_iconColor": "#9A9A9A",
+            "arrows_backgroundColor": "#ffffff",
+            "arrows_iconColor": "#9a9a9a",
             "shadow": "none",
             "border_active": false,
             "border_width": 2,
             "border_color": "#000000",
-            "productIds": "the-3p-fulfilled-snowboard"
+            "productIds": ""
           }
         }
       },
       "block_order": [
         "loox_reviews_loox_gallery_carousel_section_NJHk63"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1785157103d23e9999": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_snippets_widget_hPJiPc": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-snippets-widget/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "reviews-type": "product-reviews",
+            "reviews-limit": 10,
+            "alignment": "left",
+            "max-width": "",
+            "color-scheme": "default",
+            "shadow": "",
+            "show-rating": true,
+            "show-image": true,
+            "hide-arrows-mobile": false,
+            "font-size": 14,
+            "show-border": false,
+            "border-radius": 16,
+            "background-color": "",
+            "text-color": "",
+            "name-color": "",
+            "rating-icon-color": "",
+            "border-color": "",
+            "shadow-color": "",
+            "product_selection": ""
+          }
+        },
+        "loox_reviews_loox_rating_nCTgFh": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_snippets_widget_hPJiPc",
+        "loox_reviews_loox_rating_nCTgFh"
       ],
       "settings": {
         "include_margins": true
@@ -173,6 +224,7 @@
     "disclosures",
     "related-products",
     "17851566124ce9eca2",
-    "17851568796d93cb4e"
+    "17851568796d93cb4e",
+    "1785157103d23e9999"
   ]
 }
