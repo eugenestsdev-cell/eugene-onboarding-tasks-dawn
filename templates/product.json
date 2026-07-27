@@ -82,15 +82,9 @@
         "padding_bottom": 12
       }
     },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -106,11 +100,19 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "custom_featured_products_H4UMfD": {
+      "type": "custom-featured-products",
+      "name": "t:sections.custom-featured-products.presets.name",
+      "settings": {
+        "heading": "Featured Products",
+        "collection": "hydrogen"
+      }
     }
   },
   "order": [
     "main",
-    "disclosures",
-    "related-products"
+    "related-products",
+    "custom_featured_products_H4UMfD"
   ]
 }
