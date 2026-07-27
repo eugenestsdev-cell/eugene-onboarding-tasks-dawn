@@ -92,12 +92,19 @@
         "heading": "Custom Featured Products",
         "collection": "hydrogen"
       }
+    },
+    "1785156661dcddf566": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "image_banner",
     "scroll_popup",
     "featured_collection",
-    "custom_featured_products_x8TkMf"
+    "custom_featured_products_x8TkMf",
+    "1785156661dcddf566"
   ]
 }

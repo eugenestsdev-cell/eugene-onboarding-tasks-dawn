@@ -133,23 +133,35 @@
     },
     "17851566124ce9eca2": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "17851568796d93cb4e": {
+      "type": "apps",
       "blocks": {
-        "loox_reviews_loox_dynamic_section_7bg8zP": {
-          "type": "shopify://apps/loox-reviews/blocks/loox-dynamic-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+        "loox_reviews_loox_gallery_carousel_section_NJHk63": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-gallery-carousel-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
-            "reviews_to_display": "",
-            "default_tab": "automatic",
-            "only_photos": false,
-            "aggregated": false,
-            "limit": 20,
-            "hide_thumbnails": false,
-            "maxwidth": 1080,
-            "is_sample": true
+            "maxWidth": 1100,
+            "borderRadius": 0,
+            "itemsPerView": 5,
+            "mobileItemsPerView": 1,
+            "imageRatio": "1",
+            "reviewerNameColor": "#ffffff",
+            "starsColor": "#ffffff",
+            "arrows_backgroundColor": "#FFFFFF",
+            "arrows_iconColor": "#9A9A9A",
+            "shadow": "none",
+            "border_active": false,
+            "border_width": 2,
+            "border_color": "#000000",
+            "productIds": "the-3p-fulfilled-snowboard"
           }
         }
       },
       "block_order": [
-        "loox_reviews_loox_dynamic_section_7bg8zP"
+        "loox_reviews_loox_gallery_carousel_section_NJHk63"
       ],
       "settings": {
         "include_margins": true
@@ -160,6 +172,7 @@
     "main",
     "disclosures",
     "related-products",
-    "17851566124ce9eca2"
+    "17851566124ce9eca2",
+    "17851568796d93cb4e"
   ]
 }
