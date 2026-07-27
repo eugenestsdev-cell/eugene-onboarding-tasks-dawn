@@ -3610,3 +3610,7 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+body .essential_annoucement_bar_wrapper {
+  background: antiquewhite;
+}
